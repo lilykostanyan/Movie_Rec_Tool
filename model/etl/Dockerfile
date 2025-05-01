@@ -1,6 +1,7 @@
 FROM python:3.10-slim-bullseye
 
 RUN apt-get update && apt-get install -y \
+    unzip \
     build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \
     libblas-dev liblapack-dev gfortran \
     && rm -rf /var/lib/apt/lists/*
@@ -16,8 +17,8 @@ RUN pip3 install -r requirements.txt
 # Copy the rest of the application code
 COPY . .
 
-# Expose port 3000 (for a web server)
-EXPOSE 3000
+# Make the run script executable
+RUN chmod +x run_etl.sh
 
-# Run the indexing script
-CMD ["python", "test.py"]
+# Run unzip > upload > cleanup > archive and the indexing script
+CMD ["sh", "run_etl.sh"]
