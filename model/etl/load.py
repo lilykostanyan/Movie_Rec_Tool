@@ -9,8 +9,6 @@ load_dotenv()
 
 # === Config ===
 ES_URL = os.getenv("ELASTICSEARCH_URL")
-print("DEBUG: ELASTICSEARCH_URL =", ES_URL)
-print("DEBUG: ELASTICSEARCH_URL =", os.getenv("ELASTICSEARCH_URL"))
 INDEX_NAME = os.getenv("INDEX_NAME")
 VECTOR_DIM = int(os.getenv("VECTOR_DIM"))
 
