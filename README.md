@@ -77,6 +77,12 @@ GET movies/_count
 
 ```json
 GET movies/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "size": 5
+}
 ```
 
 ---
