@@ -22,16 +22,6 @@ Make sure the following tools are installed on your computer:
 - [Python 3.10+](https://www.python.org/downloads/) – To run Python scripts  
 - [Docker](https://www.docker.com/products/docker-desktop) – To run the application 
 
-
-## ✅ Prerequisites (What You Need Before You Start)
-
-Make sure the following tools are installed on your computer:
-
-- [Python 3.10+](https://www.python.org/downloads/) – To run Python scripts  
-- [Docker](https://www.docker.com/products/docker-desktop) – To run the application  
-
----
-
 ### ! Required Files (Provided via Google Drive) !
 
 To run this project end-to-end, you will need the following files, which will be shared via a **Google Drive link**:
