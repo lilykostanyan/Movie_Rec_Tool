@@ -33,7 +33,7 @@ Before getting started, ensure you have the following:
    git clone https://github.com/lilykostanyan/Movie_Rec_Tool.git
    ```
 
-2. Change Directory:
+2. Open the project directory (Movie_Rec_Tool) and change directory:
    ```bash
    cd app
    ```
@@ -52,6 +52,7 @@ Before getting started, ensure you have the following:
    ```bash
    pip install -r requirements.txt
    ```
+
    and then, install the necessary Playwright browser binaries:
    ```bash
    playwright install
@@ -102,7 +103,14 @@ Finally, open the **Streamlit** application.
 - **Streamlit Frontend**: [http://localhost:8501](http://localhost:8501) 
 
   This is the main user interface for the application.
-  
+
+   - Choose between Gemini AI or Our Model
+
+   - Enter a custom movie description
+
+   - Optionally filter by genre
+
+   - See detailed movie suggestions with posters, ratings, actors, and synopsis previews
 
 --- 
 
