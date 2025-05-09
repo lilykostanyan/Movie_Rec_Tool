@@ -38,32 +38,32 @@ Before getting started, ensure you have the following:
 
 3. To run this project end-to-end, you will need the following files, which will be shared via a **Google Drive link**:
 
-  a. `.env` files for each service (folder):  
-    - `etl/.env`  
-    - `back/.env`  
-    - `front/.env`
-    - `pipeline/.env`
+    a. `.env` files for each service (folder):  
+      - `etl/.env`  
+      - `back/.env`  
+      - `front/.env`
+      - `pipeline/.env`
 
-    Place the `.env` files into their respective folders (`etl/`, `back/`, `front/`, `pipeline/`) 
+      Place the `.env` files into their respective folders (`etl/`, `back/`, `front/`, `pipeline/`) 
 
-    - Copy the example file:
-      ```bash
-      cp .env.example .env
+      - Copy the example file:
+        ```bash
+        cp .env.example .env
+        ```
+      Open each `.env` file and fill in any missing values (lines with `VARIABLE_NAME=  `)
+
+    b. Google service credentials:  
+      - `client_secrets/your-service-account.json`  
+      *(this folder must be created manually in the app folder)*
+
+        ```plaintext
+      app/
+      ├── client_secrets/
+      │   └── your-service-account.json
       ```
-    Open each `.env` file and fill in any missing values (lines with `VARIABLE_NAME=  `)
 
-  b. Google service credentials:  
-    - `client_secrets/your-service-account.json`  
-    *(this folder must be created manually in the app folder)*
-
-      ```plaintext
-    app/
-    ├── client_secrets/
-    │   └── your-service-account.json
-    ```
-
-    - Open `back/.env`, `pipeline/.env` and update this line:
-    SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
+      - Open `back/.env`, `pipeline/.env` and update this line:
+      SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
 
 4. Open the provided with a ZIP file containing preprocessed `.json` files from **Google Drive**.
 
