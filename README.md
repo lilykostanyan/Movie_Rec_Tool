@@ -74,8 +74,8 @@ Before getting started, ensure you have the following:
   app/
   ├── etl/
   │ └── data/
-  │ └── jsons/
-  │ ├── move_data.zip
+  │ │ └── jsons/
+  │ │  ├── move_data.zip
   │ └── ...
   ```
 
