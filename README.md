@@ -121,7 +121,7 @@ After running `docker-compose up --build`, you can access the different parts of
    ```json
    GET movies-bm25-vector/_count
    ```
-   - retrieves a few documents from the index
+   - retrieves documents from the index
    ```json
    GET movies-bm25-vector/_search
    ```
