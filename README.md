@@ -22,27 +22,6 @@ Make sure the following tools are installed on your computer:
 - [Python 3.10+](https://www.python.org/downloads/) – To run Python scripts  
 - [Docker](https://www.docker.com/products/docker-desktop) – To run the application 
 
-### ! Required Files (Provided via Google Drive) !
-
-To run this project end-to-end, you will need the following files, which will be shared via a **Google Drive link**:
-
-1. `.env` files for each service:  
-   - `etl/.env`  
-   - `back/.env`  
-   - `front/.env`
-
-Place the `.env` files into their respective folders (`etl/`, `back/`, `front/`) 
-
-Open each `.env` file and fill in any missing values (lines with `VARIABLE_NAME=  `)
-
-2. Google service credentials:  
-   - `client_secrets/your-service-account.json`  
-   *(this folder must be created manually in the app folder)*
-
-3. Preprocessed movie data:  
-   - A ZIP file containing `.json` files
-   - Place these files in `etl/data/jsons/` before running the ETL process 
-
 ---
 
 > ! Do not commit `.env` or `client_secrets/` to version control — these contain sensitive information.
@@ -62,6 +41,29 @@ Before getting started, ensure you have the following:
    ```bash
    cd app
    ```
+
+
+### ! Required Files (Provided via Google Drive) !
+
+To run this project end-to-end, you will need the following files, which will be shared via a **Google Drive link**:
+
+a. `.env` files for each service:  
+   - `etl/.env`  
+   - `back/.env`  
+   - `front/.env`
+
+Place the `.env` files into their respective folders (`etl/`, `back/`, `front/`) 
+
+Open each `.env` file and fill in any missing values (lines with `VARIABLE_NAME=  `)
+
+b. Google service credentials:  
+   - `client_secrets/your-service-account.json`  
+   *(this folder must be created manually in the app folder)*
+
+c. Preprocessed movie data:  
+   - A ZIP file containing `.json` files
+   - Place these files in `etl/data/jsons/` before running the ETL process 
+
 
 3. Build and start the Docker containers:
    ```bash
