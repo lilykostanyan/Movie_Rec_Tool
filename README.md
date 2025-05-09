@@ -186,35 +186,351 @@ Final-Capstone/
 
 ---
 
-## Docker
+## 🐳 Docker
+
+This project uses Docker to manage all core services. After running `docker-compose up --build`, the following containers will be launched:
+
+## Components Overview
+
+- **ETL:** Loads vectorized `.json` files into Elasticsearch
+- **Pipeline:** Scrapes, cleans, and embeds movie data
+- **Backend (FastAPI):** Processes search requests and returns smart recommendations
+- **Frontend (Streamlit):** User interface to interact with both Gemini AI and the custom model
+- **Elasticsearch + Kibana:** Vector search engine and dashboard
 
 ---
 
-## ETL
+### 1. **ETL**
+A Python-based service that loads pre-processed movie data (from `.json` files) into Elasticsearch.
+
+- Triggered automatically on `docker-compose up`
+- Reads data from the `etl/data/` directory
+- Logs activity to `shared_logs/`
+
+```yaml
+FROM python:3.10-slim-bullseye
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    unzip \
+    build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \
+    libblas-dev liblapack-dev gfortran \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /etl
+
+# Copy requirements file and install dependencies
+COPY requirements.txt .
+RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the code
+COPY . .
+
+# Make the run script executable
+RUN chmod +x run_etl.sh
+
+
+# Run the ETL process
+CMD ["sh", "run_etl.sh"]
+```
 
 ---
 
-## API
+### 2. **Backend (FastAPI)**
+Handles recommendation logic and exposes API endpoints to serve the frontend.
 
-We created a service for the **API** part of the project, which handles core functionalities such as
+- Handling movie recommendation requests from the frontend
+- Querying **Elasticsearch** using script scoring + genre filtering
+- Fetching additional movie metadata from **Google BigQuery**
+- Returning clean and structured JSON responses to be rendered in the UI
 
-### **Features**
+```yaml
+FROM python:3.10-slim-bullseye
 
+# Install system dependencies required for Python packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \
+    libblas-dev liblapack-dev gfortran libffi-dev libssl-dev curl \
+    && rm -rf /var/lib/apt/lists/*
 
-### **Requests** 
+# Set work directory
+WORKDIR /back
+
+# Set env variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --upgrade pip setuptools wheel && pip install --no-cache-dir -r requirements.txt
+
+# Copy project
+COPY . .
+
+# Expose the port FastAPI will run on
+EXPOSE 8000
+
+# Command to run the FastAPI app
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
 
 ---
 
-## **Services**
-We use Docker services for efficient deployment and management of components.  
+#### Main Features
 
-### **Database** 
+- Exposes a single endpoint:  
+  `POST /recommend_movies`  
+  Accepts a description, genre filters (optional), and number of desired results.
 
-## Web Application
+- Uses **semantic vector search** powered by a SentenceTransformer model and Elasticsearch's `dense_vector` field
 
-We created a service for the **front-end** part of the project, which is responsible for hosting the **Streamlit web application**.
+- Implements **genre-based filtering** with two modes:
+  - `strict` → match all selected genres
+  - `relaxed` → match any selected genre
 
-### Dockerfile
+- Enhances results with movie info from BigQuery:  
+  (title, year, IMDb rating, age rating, top 5 actors, poster image, etc.)
 
-```Dockerfile
-# Dockerfile
+---
+
+#### Test Tool
+
+Once the backend is running, test it via Swagger UI:  
+[http://localhost:8000/docs](http://localhost:8000/docs)
+
+You can try out the `POST /recommend_movies` endpoint interactively from there.
+
+---
+
+> ! Make sure `.env` is correctly set in `/app/back/`, with variables like `GENRE_OPTIONS`, `BQ_TABLE`, `SERVICE_ACCOUNT_FILE`, etc., before launching the backend.
+
+---
+
+### 3. **Frontend (Streamlit)**
+The user interface for selecting genres, entering queries, and viewing movie recommendations.
+
+```yaml
+FROM python:3.10-slim-bullseye
+
+# Install system dependencies required for Python packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \
+    libblas-dev liblapack-dev gfortran libffi-dev libssl-dev curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set work directory
+FROM python:3.10-slim-bullseye
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libfreetype6-dev libpng-dev libjpeg-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /front
+
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+COPY requirements.txt .
+
+RUN pip3 install --upgrade pip \
+ && pip3 install --no-cache-dir --force-reinstall numpy pandas \
+ && pip3 install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 8501
+
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.headless=true", "--server.runOnSave=true", "--server.address=0.0.0.0"]
+```
+
+---
+
+#### Features:
+
+- Choose between two recommendation modes:
+  - **Our Model** – Uses a vector-based similarity search via the backend
+  - **Gemini AI** – Uses Google's Generative AI to suggest movies based on creative input
+
+- Describe the kind of movie you're looking for in plain text
+
+- Optional:
+  - Filter by genre(s)
+  - Choose strict vs. relaxed filtering mode
+  - Select how many movie recommendations you want (1–5)
+
+- Results include:
+  - 🎬 Title and release year
+  - ⭐ IMDb rating, 🔞 Age rating, 🕒 Duration
+  - 🎭 Top actors
+  - 🖼 Poster image
+  - 📖 Short preview text from the synopsis
+
+---
+
+#### How It Works:
+
+- The UI is defined in `app/front/app.py`
+- Logic for making API requests and formatting results is in `recommend.py`
+- Communicates with the backend at `http://localhost:8000/recommend_movies`
+
+> The app runs at: [http://localhost:8501](http://localhost:8501)
+
+> ! Make sure the `.env` file in `/front/` is configured correctly (especially `BACKEND_URL` and `GEMINI_API_KEY`).
+
+---
+
+### Volume Mounts & Env Setup
+
+- `.env` files for each service are located in their respective folders (`etl/`, `back/`, `front/`)
+- `client_secrets/` holds your private Google service credentials (mounted read-only)
+- All containers use a shared `shared_logs/` folder for centralized logging
+
+---
+
+> ! Make sure to fill in all environment variables before launching the containers. Missing values may cause services to fail.
+
+---
+
+### Services (Docker Compose)
+
+The following services are defined in `docker-compose.yaml`:
+
+---
+
+#### **elasticsearch**
+- Stores vectorized movie data
+- Runs on port **9200**
+- Used by the backend to perform similarity search
+- Includes a health check to ensure it's ready before other services start
+
+---
+
+#### **kibana**
+- Visual dashboard for Elasticsearch
+- Runs on port **5601**
+- Lets you inspect indexed documents and run test queries via **Dev Tools**
+
+---
+
+#### **etl**
+- Loads preprocessed `.json` files (from `pipeline/`) into Elasticsearch
+- Mounted volumes:
+  - `etl/data/` → where movie chunks live
+  - `shared_logs/` → stores log output
+- Depends on Elasticsearch being healthy
+
+---
+
+#### **back** (FastAPI)
+- Hosts the backend API on port **8000**
+- Handles recommendation logic and serves data to the frontend
+- Connects to both Elasticsearch and Google BigQuery
+- Mounts GCP credentials via `client_secrets/`
+
+---
+
+#### **front** (Streamlit)
+- Runs the user interface on port **8501**
+- Sends queries to the backend and displays movie recommendations
+- Uses `shared_logs/` for centralized logging
+
+---
+
+#### Volumes
+- `esdata`: Persists Elasticsearch data between runs
+
+---
+
+ ```yaml
+services:
+  elasticsearch:
+    container_name: elasticsearch5
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.5.1
+    restart: always
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200/_cluster/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  kibana:
+    container_name: kibana5
+    restart: always
+    image: docker.elastic.co/kibana/kibana:8.5.1
+    ports:
+      - "5601:5601"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+
+  etl:
+    container_name: etl5
+    build:
+      context: ./etl
+      dockerfile: Dockerfile
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    restart: on-failure
+    env_file:
+      - ./etl/.env
+    volumes:
+      - ./etl/data:/etl/data
+      - ./shared_logs:/etl/logs
+    environment:
+      - PYTHONPATH=/app
+
+  back:
+    container_name: back5
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    env_file:
+      - ./back/.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./back:/back
+      - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./client_secrets/enduring-brace-451209-q3-35cf0810d57c.json:/back/client_secrets/enduring-brace-451209-q3-35cf0810d57c.json:ro
+      - ./shared_logs:/back/logs
+    environment:
+      - PYTHONPATH=/app
+
+  front:
+    container_name: front5
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    env_file:
+      - ./front/.env
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./front:/front
+      - ./shared_logs:/app/shared_logs
+    environment:
+      - PYTHONPATH=/app
+    depends_on:
+      - back
+
+volumes:
+  esdata:
+```
+
+---
