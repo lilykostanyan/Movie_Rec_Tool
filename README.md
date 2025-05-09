@@ -193,7 +193,6 @@ This project uses Docker to manage all core services. After running `docker-comp
 ## Components Overview
 
 - **ETL:** Loads vectorized `.json` files into Elasticsearch
-- **Pipeline:** Scrapes, cleans, and embeds movie data
 - **Backend (FastAPI):** Processes search requests and returns smart recommendations
 - **Frontend (Streamlit):** User interface to interact with both Gemini AI and the custom model
 - **Elasticsearch + Kibana:** Vector search engine and dashboard
