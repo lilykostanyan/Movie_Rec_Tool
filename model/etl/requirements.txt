@@ -1,6 +1,0 @@
-elasticsearch===8.5.1
-pandas
-openpyxl
-numpy
-python-dateutil
-python-dotenv

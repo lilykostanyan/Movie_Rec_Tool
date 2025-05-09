@@ -1,0 +1,11 @@
+__pycache__
+client_secrets/
+
+# Python virtual environments
+env/
+env.bak/
+venv/
+venv.bak/
+
+# Environment variable files
+.env
