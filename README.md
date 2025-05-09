@@ -133,12 +133,12 @@ Finally, open the **Streamlit** application.
    ```bash
    cp .env.example .env
    ```
-   
-```plaintext
-app/
-├── client_secrets/
-│   └── your-service-account.json
-```
+
+   ```plaintext
+   app/
+   ├── client_secrets/
+   │   └── your-service-account.json
+   ```
 
 2. Open `.env` and update this line:
 SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json - ??????????
