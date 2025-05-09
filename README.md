@@ -22,12 +22,6 @@ Make sure the following tools are installed on your computer:
 - [Python 3.10+](https://www.python.org/downloads/) – To run Python scripts  
 - [Docker](https://www.docker.com/products/docker-desktop) – To run the application 
 
----
-
-> ! Do not commit `.env` or `client_secrets/` to version control — these contain sensitive information.
-
----
-
 ## Installation
 
 Before getting started, ensure you have the following:
@@ -41,7 +35,6 @@ Before getting started, ensure you have the following:
    ```bash
    cd app
    ```
-
 
 ### ! Required Files (Provided via Google Drive) !
 
@@ -64,6 +57,11 @@ c. Preprocessed movie data:
    - A ZIP file containing `.json` files
    - Place these files in `etl/data/jsons/` before running the ETL process 
 
+---
+
+> ! Do not commit `.env` or `client_secrets/` to version control — these contain sensitive information.
+
+---
 
 3. Build and start the Docker containers:
    ```bash
