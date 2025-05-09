@@ -47,7 +47,16 @@ Before getting started, ensure you have the following:
    ```bash
    cd app/pipeline
    ```
-##run requirements.txt and install playwright 
+
+5. From inside the project directory, install the required Python packages by running:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   and then, install the necessary Playwright browser binaries:
+   ```bash
+   playwright install
+   ```
+
 5. Run the pipeline (no need to wait until Docker is fully up)
    ```bash
    python main_pipeline.py
