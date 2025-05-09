@@ -1,11 +1,7 @@
 import streamlit as st
 from recommend import gemini_recommendation, custom_model_recommendation, display_movie
 from config import GENRE_OPTIONS
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-
-from app.utils.logger import logger
+from utils.logger import logger
 
 logger.info("- Front Launching...")
 
@@ -81,3 +77,5 @@ elif mode == "Our Model":
             except Exception as e:
                 # Display an error message if the API call fails
                 st.error(f"Error calling API: {e}")
+
+logger.info("- Front Ready! ...")

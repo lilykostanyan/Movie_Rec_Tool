@@ -1,24 +1,9 @@
 from loguru import logger
-import os
 
-# === LOGGING SETUP ===
-# Define shared logs directory
-LOG_DIR = os.path.join(os.path.dirname(__file__), "..", "logs")
-os.makedirs(LOG_DIR, exist_ok=True)
-
-# Determine which module is using this logger
-LOG_FILE = os.getenv("LOG_FILE")  # Default to app.log
-
-# Full path to the log file
-LOG_PATH = os.path.join(LOG_DIR, LOG_FILE)
-
-# Remove default log handler
-logger.remove()
-
-# Log to file (rotates at 1MB, UTF-8 encoding)
-logger.add(LOG_PATH, rotation="1 MB", encoding="utf-8")
+# Configure logger to write to a file
+logger.add("logs/etl.log", rotation="1 MB", retention="7 days", compression="zip")
 
 # Also log to console (real-time)
 logger.add(lambda msg: print(msg, end=""))
 
-logger.info(f"* Logging initialized → {LOG_FILE}")
+logger.info(f"* Logging initialized → etl.log")
