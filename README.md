@@ -116,12 +116,12 @@ After running `docker-compose up --build`, you can access the different parts of
    1. Click on the **menu icon (☰)** in the top-left corner of the page.
    2. Scroll down and click on **Dev Tools**.
    3. In the console that appears, you can run queries like:
-   ### counts documents in the index
+
+   - counts documents in the index
    ```json
    GET movies-bm25-vector/_count
    ```
-
-   ### retrieves a few documents from the index
+   - retrieves a few documents from the index
    ```json
    GET movies-bm25-vector/_search
    ```
