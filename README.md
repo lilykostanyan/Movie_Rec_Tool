@@ -126,7 +126,7 @@ SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json - ??????????
 ---
 
 ### Project Schema
-
+```plaintext
 Final-Capstone/
 ├── app/ 
 │ ├── etl/ 
@@ -162,6 +162,7 @@ Final-Capstone/
 │
 ├── README.md
 └── ... # Additional helper files
+```
 
 ---
 
