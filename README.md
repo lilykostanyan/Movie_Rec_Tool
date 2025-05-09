@@ -36,60 +36,60 @@ Before getting started, ensure you have the following:
    cd app
    ```
 
-### ! Required Files (Provided via Google Drive) !
+3. To run this project end-to-end, you will need the following files, which will be shared via a **Google Drive link**:
 
-To run this project end-to-end, you will need the following files in a zip, which will be shared via a **Google Drive link**:
+  a. `.env` files for each service (folder):  
+    - `etl/.env`  
+    - `back/.env`  
+    - `front/.env`
+    - `pipeline/.env`
 
-a. `.env` files for each service:  
-   - `etl/.env`  
-   - `back/.env`  
-   - `front/.env`
+    Place the `.env` files into their respective folders (`etl/`, `back/`, `front/`, `pipeline/`) 
 
-Place the `.env` files into their respective folders (`etl/`, `back/`, `front/`) 
+    - Copy the example file:
+      ```bash
+      cp .env.example .env
+      ```
+    Open each `.env` file and fill in any missing values (lines with `VARIABLE_NAME=  `)
 
-Open each `.env` file and fill in any missing values (lines with `VARIABLE_NAME=  `)
+  b. Google service credentials:  
+    - `client_secrets/your-service-account.json`  
+    *(this folder must be created manually in the app folder)*
 
-  **Quick Setup Guide for Environment Variables**:
-
-  - Copy the example file:
-    ```bash
-    cp .env.example .env
-    ```
-
-    ```plaintext
+      ```plaintext
     app/
     ├── client_secrets/
     │   └── your-service-account.json
     ```
 
-  - Open `.env` and update this line:
-  SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
+    - Open `back/.env`, `pipeline/.env` and update this line:
+    SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
 
-b. Google service credentials:  
-   - `client_secrets/your-service-account.json`  
-   *(this folder must be created manually in the app folder)*
+4. Open the provided with a ZIP file containing preprocessed `.json` files from **Google Drive**.
 
-c. Preprocessed movie data:  
-   - A ZIP file containing `.json` files
-   - Place these files in `etl/data/jsons/` before running the ETL process 
+  - **Place the `.zip` file** inside the following folder:
 
----
+  > Example folder structure after placement:
+  ```plaintext
+  app/
+  ├── etl/
+  │ └── data/
+  │ └── jsons/
+  │ ├── move_data.zip
+  │ └── ...
+  ```
 
-> ! Do not commit `.env` or `client_secrets/` to version control — these contain sensitive information.
-
----
-
-3. Build and start the Docker containers:
+5. Build and start the Docker containers:
    ```bash
    docker-compose up --build
    ```
 
-4. Open new terminal:
+6. Open new terminal:
    ```bash
    cd app/pipeline
    ```
 
-5. From inside the project directory, install the required Python packages by running:
+7. From inside the project directory, install the required Python packages by running:
    ```bash
    pip install -r requirements.txt
    ```
@@ -99,7 +99,7 @@ c. Preprocessed movie data:
    playwright install
    ```
 
-5. Run the pipeline (no need to wait until Docker is fully up)
+8. Run the pipeline (no need to wait until Docker is fully up)
    ```bash
    python main_pipeline.py
    ``` 
