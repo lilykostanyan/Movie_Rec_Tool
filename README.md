@@ -78,9 +78,9 @@ After running `docker-compose up --build`, you can access the different parts of
 - **Kibana Dashboard**: [http://localhost:5601](http://localhost:5601) 
 
   Kibana provides a UI to visually inspect and manage your Elasticsearch index:
-1. Click on the **menu icon (☰)** in the top-left corner of the page.
-2. Scroll down and click on **Dev Tools**.
-3. In the console that appears, you can run queries like:
+   1. Click on the **menu icon (☰)** in the top-left corner of the page.
+   2. Scroll down and click on **Dev Tools**.
+   3. In the console that appears, you can run queries like:
 ```json
 GET movies-bm25-vector/_count
 ```
