@@ -194,7 +194,7 @@ This project uses Docker to manage all core services. After running `docker-comp
 
 - **ETL:** Loads vectorized `.json` files into Elasticsearch
 - **Backend (FastAPI):** Processes search requests and returns smart recommendations
-- **Frontend (Streamlit):** User interface to interact with both Gemini AI and the custom model
+- **Frontend (Streamlit):** User interface to interact with both Gemini AI and the our model
 - **Elasticsearch + Kibana:** Vector search engine and dashboard
 
 ---
