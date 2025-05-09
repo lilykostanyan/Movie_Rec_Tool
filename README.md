@@ -56,11 +56,11 @@ Before getting started, ensure you have the following:
       - `client_secrets/your-service-account.json`  
       *(this folder must be created manually in the app folder)*
 
-        ```plaintext
-      app/
-      ├── client_secrets/
-      │   └── your-service-account.json
-      ```
+      ```plaintext
+    app/
+    ├── client_secrets/
+    │   └── your-service-account.json
+    ```
 
       - Open `back/.env`, `pipeline/.env` and update this line:
       SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
