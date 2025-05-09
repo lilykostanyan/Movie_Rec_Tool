@@ -42,6 +42,7 @@ To run this project end-to-end, you will need the following files, which will be
    - `front/.env`
 
 Place the `.env` files into their respective folders (`etl/`, `back/`, `front/`) 
+
 Open each `.env` file and fill in any missing values (lines with `VARIABLE_NAME=  `)
 
 2. Google service credentials:  
