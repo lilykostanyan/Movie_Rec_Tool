@@ -38,7 +38,7 @@ Before getting started, ensure you have the following:
 
 ### ! Required Files (Provided via Google Drive) !
 
-To run this project end-to-end, you will need the following files, which will be shared via a **Google Drive link**:
+To run this project end-to-end, you will need the following files in a zip, which will be shared via a **Google Drive link**:
 
 a. `.env` files for each service:  
    - `etl/.env`  
