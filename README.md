@@ -63,6 +63,24 @@ c. Preprocessed movie data:
 
 ---
 
+**Quick Setup Guide for Environment Variables**:
+
+- Copy the example file:
+   ```bash
+   cp .env.example .env
+   ```
+
+   ```plaintext
+   app/
+   ├── client_secrets/
+   │   └── your-service-account.json
+   ```
+
+- Open `.env` and update this line:
+SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
+
+---
+
 3. Build and start the Docker containers:
    ```bash
    docker-compose up --build
@@ -151,24 +169,6 @@ Finally, open the **Streamlit** application.
 >   **you still need to enter a value manually**)
 > - Your Google service account JSON file is placed inside a folder named `client_secrets/` (this folder must be created manually)  
 > - The variable `SERVICE_ACCOUNT_FILE` in your `.env` file points to the correct path (e.g., `client_secrets/your-service-account.json`)
-
----
-
-**Quick Setup Guide for Environment Variables**:
-
-1. Copy the example file:
-   ```bash
-   cp .env.example .env
-   ```
-
-   ```plaintext
-   app/
-   ├── client_secrets/
-   │   └── your-service-account.json
-   ```
-
-2. Open `.env` and update this line:
-SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
 
 ---
 
