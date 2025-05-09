@@ -120,8 +120,8 @@ Finally, open the **Streamlit** application.
 > - Docker is running on your machine  
 > - You’ve created a `.env` file based on the provided `.env.example`
 > - All required environment variables are **filled in correctly** —  
->     (if you see a line like `VARIABLE_NAME=` with nothing after the `=`, it means  
->     **you still need to enter a value manually**)
+>   (if you see a line like `VARIABLE_NAME=` with nothing after the `=`, it means  
+>   **you still need to enter a value manually**)
 > - Your Google service account JSON file is placed inside a folder named `client_secrets/` (this folder must be created manually)  
 > - The variable `SERVICE_ACCOUNT_FILE` in your `.env` file points to the correct path (e.g., `client_secrets/your-service-account.json`)
 
@@ -188,7 +188,11 @@ Final-Capstone/
 
 ## Docker
 
+---
+
 ## ETL
+
+---
 
 ## API
 
