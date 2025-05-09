@@ -72,17 +72,11 @@ After running `docker-compose up --build`, you can access the different parts of
 2. Scroll down and click on **Dev Tools**.
 3. In the console that appears, you can run queries like:
 ```json
-GET movies/_count
+GET movies-bm25-vector/_count
 ```
 
 ```json
-GET movies/_search
-{
-  "query": {
-    "match_all": {}
-  },
-  "size": 5
-}
+GET movies-bm25-vector/_search
 ```
 
 ---
