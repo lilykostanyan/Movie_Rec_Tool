@@ -36,7 +36,7 @@ Before getting started, ensure you have the following:
    cd app
    ```
 
-3. To run this project end-to-end, you will need the following files, which will be shared via a **Google Drive link**:
+3. To run this project end-to-end, you will need the following files, which will be shared via a **Google Drive link** (inside `env.txt` for all of them):
 
     a. `.env` files for each service (folder):  
       - `etl/.env`  
