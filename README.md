@@ -49,6 +49,22 @@ Place the `.env` files into their respective folders (`etl/`, `back/`, `front/`)
 
 Open each `.env` file and fill in any missing values (lines with `VARIABLE_NAME=  `)
 
+  **Quick Setup Guide for Environment Variables**:
+
+  - Copy the example file:
+    ```bash
+    cp .env.example .env
+    ```
+
+    ```plaintext
+    app/
+    ├── client_secrets/
+    │   └── your-service-account.json
+    ```
+
+  - Open `.env` and update this line:
+  SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
+
 b. Google service credentials:  
    - `client_secrets/your-service-account.json`  
    *(this folder must be created manually in the app folder)*
@@ -60,24 +76,6 @@ c. Preprocessed movie data:
 ---
 
 > ! Do not commit `.env` or `client_secrets/` to version control — these contain sensitive information.
-
----
-
-**Quick Setup Guide for Environment Variables**:
-
-- Copy the example file:
-   ```bash
-   cp .env.example .env
-   ```
-
-   ```plaintext
-   app/
-   ├── client_secrets/
-   │   └── your-service-account.json
-   ```
-
-- Open `.env` and update this line:
-SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
 
 ---
 
