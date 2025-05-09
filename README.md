@@ -30,7 +30,7 @@ Before getting started, ensure you have the following:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo.git - !!!!!
+   git clone https://github.com/lilykostanyan/Movie_Rec_Tool.git
    ```
 
 2. Change Directory:
