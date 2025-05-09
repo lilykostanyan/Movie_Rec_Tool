@@ -11,7 +11,7 @@ Lili Kostanyan
 ## 📚 Documentation
 
 For a more detailed documentation check :  
-🔗  - !!!!!
+🔗  - https://lilykostanyan.github.io/Movie_Rec_Tool/
 
 ---
 
