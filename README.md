@@ -141,7 +141,7 @@ Finally, open the **Streamlit** application.
    ```
 
 2. Open `.env` and update this line:
-SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json - ??????????
+SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json
 
 ---
 
