@@ -1,0 +1,1643 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../etl/">
+      
+      
+        <link rel="next" href="../front/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>BACK - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-backend-fastapi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BACK
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  PIPELINE
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../etl/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ETL
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  BACK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../front/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FRONT
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PIPELINE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ETL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    BACK
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    BACK
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-access-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Access URLs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-recommendation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Recommendation Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-docker-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Docker Service
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="- Docker Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.back.config" class="md-nav__link">
+    <span class="md-ellipsis">
+      config
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.back.config.get_bigquery_client" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_bigquery_client()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.back.config.get_elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_elasticsearch()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.back.config.get_sentence_transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_sentence_transformer()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.back.main" class="md-nav__link">
+    <span class="md-ellipsis">
+      main
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.back.main.MovieRequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      MovieRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.back.main.chunk_sort_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      chunk_sort_key()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.back.main.recommend_movies" class="md-nav__link">
+    <span class="md-ellipsis">
+      recommend_movies()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.back.main.root" class="md-nav__link">
+    <span class="md-ellipsis">
+      root()
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../front/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FRONT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="-backend-fastapi">- Backend (FastAPI)</h1>
+<p>The <strong>FastAPI backend</strong> service is responsible for handling user requests, running recommendation logic, and returning enriched movie suggestions.</p>
+<hr />
+<h2 id="-access-urls">- Access URLs</h2>
+<ul>
+<li>
+<p><strong>FastAPI</strong>: <a href="http://localhost:8501">http://localhost:8501</a></p>
+</li>
+<li>
+<p><strong>Swagger UI</strong>: <a href="http://localhost:8000/docs">http://localhost:8000/docs</a></p>
+</li>
+</ul>
+<hr />
+<h2 id="-features">- Features</h2>
+<ul>
+<li>
+<p><strong>/recommend_movies</strong> (POST):<br />
+  Accepts a movie description and genre filters, and returns personalized movie suggestions.</p>
+</li>
+<li>
+<p><strong>/ (root)</strong> (GET):<br />
+  A health check route confirming the API is live.</p>
+</li>
+</ul>
+<hr />
+<h2 id="-recommendation-flow">- Recommendation Flow</h2>
+<ol>
+<li><strong>User Input</strong>: Accepts a query and genre selection.</li>
+<li><strong>SBERT Encoding</strong>: Converts the query to an embedding using a SentenceTransformer.</li>
+<li><strong>Hybrid Search</strong>: Combines cosine similarity and BM25 search in Elasticsearch.</li>
+<li><strong>Genre Filtering</strong>: Filters results by genre using strict or relaxed mode.</li>
+<li><strong>Metadata Enrichment</strong>: Fetches detailed metadata (title, poster, rating, actors) from BigQuery.</li>
+<li><strong>Response</strong>: Returns a structured list of top movie matches.</li>
+</ol>
+<hr />
+<h2 id="-docker-service">- Docker Service</h2>
+<p>The backend is deployed as a container and connects with Elasticsearch and BigQuery:</p>
+<h3 id="-dockerfile">- Dockerfile</h3>
+<pre><code class="language-yaml">FROM python:3.10-slim-bullseye
+
+# Install system dependencies required for Python packages
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+    build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \
+    libblas-dev liblapack-dev gfortran libffi-dev libssl-dev curl \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+# Set work directory
+WORKDIR /back
+
+# Set env variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --upgrade pip setuptools wheel &amp;&amp; pip install --no-cache-dir -r requirements.txt
+
+# Copy project
+COPY . .
+
+# Expose the port FastAPI will run on
+EXPOSE 8000
+
+# Command to run the FastAPI app
+CMD [&quot;uvicorn&quot;, &quot;main:app&quot;, &quot;--host&quot;, &quot;0.0.0.0&quot;, &quot;--port&quot;, &quot;8000&quot;]
+</code></pre>
+<hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="app.back.config"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="app.back.config.get_bigquery_client" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_bigquery_client</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Creates and returns a BigQuery client using service account credentials.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="google.cloud.bigquery.Client">Client</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>bigquery.Client: Authenticated BigQuery client configured with the service account file.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>app/back/config.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_bigquery_client</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">bigquery</span><span class="o">.</span><span class="n">Client</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates and returns a BigQuery client using service account credentials.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bigquery.Client: Authenticated BigQuery client configured with the service account file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">credentials</span> <span class="o">=</span> <span class="n">service_account</span><span class="o">.</span><span class="n">Credentials</span><span class="o">.</span><span class="n">from_service_account_file</span><span class="p">(</span>
+        <span class="n">SERVICE_ACCOUNT_FILE</span><span class="p">,</span>
+        <span class="n">scopes</span><span class="o">=</span><span class="n">SCOPE</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">bigquery</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">BQ_PROJECT_ID</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="app.back.config.get_elasticsearch" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_elasticsearch</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Creates and returns an Elasticsearch client instance.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>Elasticsearch</code></td>          <td>
+                <code><span title="elasticsearch.Elasticsearch">Elasticsearch</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Configured Elasticsearch client with the specified URL and timeout.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>app/back/config.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_elasticsearch</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Elasticsearch</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates and returns an Elasticsearch client instance.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Elasticsearch: Configured Elasticsearch client with the specified URL and timeout.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">Elasticsearch</span><span class="p">(</span><span class="n">ES_URL</span><span class="p">,</span> <span class="n">request_timeout</span><span class="o">=</span><span class="n">ES_TIMEOUT</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="app.back.config.get_sentence_transformer" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_sentence_transformer</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Loads and returns the sentence transformer model.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>SentenceTransformer</code></td>          <td>
+                <code><span title="sentence_transformers.SentenceTransformer">SentenceTransformer</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Pre-trained sentence transformer model for generating embeddings.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>app/back/config.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_sentence_transformer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">SentenceTransformer</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Loads and returns the sentence transformer model.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SentenceTransformer: Pre-trained sentence transformer model for generating embeddings.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">SentenceTransformer</span><span class="p">(</span><span class="n">MODEL_NAME</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="app.back.main"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="app.back.main.MovieRequest" class="doc doc-heading">
+          <code>MovieRequest</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+  
+      <p>Represents the request body for the movie recommendation endpoint.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>query</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The search query for movie recommendations.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>use_genre_filter</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether to filter results by genre.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>selected_genres</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[str]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of genres to filter by.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>filtering_mode</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="typing.Literal">Literal</span>[&#39;strict&#39;, &#39;relaxed&#39;]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mode for genre filtering.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>num_recs</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of recommendations to return.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+            <details class="quote">
+              <summary>Source code in <code>app/back/main.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MovieRequest</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents the request body for the movie recommendation endpoint.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        query (str): The search query for movie recommendations.</span>
+<span class="sd">        use_genre_filter (bool): Whether to filter results by genre.</span>
+<span class="sd">        selected_genres (Optional[List[str]]): List of genres to filter by.</span>
+<span class="sd">        filtering_mode (Optional[Literal[&quot;strict&quot;, &quot;relaxed&quot;]]): Mode for genre filtering.</span>
+<span class="sd">        num_recs (int): Number of recommendations to return.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">query</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">use_genre_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">selected_genres</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">filtering_mode</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;strict&quot;</span><span class="p">,</span> <span class="s2">&quot;relaxed&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;strict&quot;</span>
+    <span class="n">num_recs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="app.back.main.chunk_sort_key" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">chunk_sort_key</span><span class="p">(</span><span class="n">chunk_id</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generates a sorting key for chunk IDs based on their type and numerical order.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>chunk_id</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The chunk ID to generate a sort key for.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>tuple</code></td>          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A tuple containing the type order and numerical components of the chunk ID.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>app/back/main.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">chunk_sort_key</span><span class="p">(</span><span class="n">chunk_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates a sorting key for chunk IDs based on their type and numerical order.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        chunk_id (str): The chunk ID to generate a sort key for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing the type order and numerical components of the chunk ID.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">chunk_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+    <span class="n">type_order</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;sh&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;short&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;long&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+    <span class="n">type_val</span> <span class="o">=</span> <span class="n">type_order</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">99</span><span class="p">)</span>
+    <span class="n">secondary</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">:]))))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">type_val</span><span class="p">,</span> <span class="o">*</span><span class="n">secondary</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="app.back.main.recommend_movies" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">recommend_movies</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Recommends movies based on a query and optional genre filters.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>request</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="app.back.main.MovieRequest" href="#app.back.main.MovieRequest">MovieRequest</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The request body containing query and filter options.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>dict</code></td>          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary containing the recommended movies and their metadata.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>app/back/main.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/recommend_movies&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">recommend_movies</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">MovieRequest</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Recommends movies based on a query and optional genre filters.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        request (MovieRequest): The request body containing query and filter options.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary containing the recommended movies and their metadata.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">query_vector</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="c1"># Construct the Elasticsearch query</span>
+    <span class="n">query_filter</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">use_genre_filter</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">selected_genres</span><span class="p">:</span>
+        <span class="n">query_filter</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;terms&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;genres&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">selected_genres</span><span class="p">}})</span>
+
+    <span class="n">search_body</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="n">TOP_K</span><span class="p">,</span>
+        <span class="s2">&quot;_source&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;movie_id&quot;</span><span class="p">,</span> <span class="s2">&quot;chunk_id&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;genres&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;script_score&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;bool&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;should&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;match&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">query</span><span class="p">}}],</span>
+                        <span class="s2">&quot;filter&quot;</span><span class="p">:</span> <span class="n">query_filter</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;script&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;0.3 * _score + 0.7 * cosineSimilarity(params.query_vector, &#39;vector&#39;) + 1.0&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;query_vector&quot;</span><span class="p">:</span> <span class="n">query_vector</span><span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Execute the search query</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">es</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">ES_INDEX</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">search_body</span><span class="p">)</span>
+
+    <span class="n">movie_scores</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">chunk_meta</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">hit</span> <span class="ow">in</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;hits&quot;</span><span class="p">][</span><span class="s2">&quot;hits&quot;</span><span class="p">]:</span>
+        <span class="n">doc</span> <span class="o">=</span> <span class="n">hit</span><span class="p">[</span><span class="s2">&quot;_source&quot;</span><span class="p">]</span>
+        <span class="n">movie_id</span> <span class="o">=</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;movie_id&quot;</span><span class="p">]</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">hit</span><span class="p">[</span><span class="s2">&quot;_score&quot;</span><span class="p">]</span>
+        <span class="n">movie_scores</span><span class="p">[</span><span class="n">movie_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+        <span class="n">chunk_meta</span><span class="p">[</span><span class="n">movie_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s2">&quot;chunk_id&quot;</span><span class="p">:</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;chunk_id&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">score</span><span class="p">,</span>
+            <span class="s2">&quot;genres&quot;</span><span class="p">:</span> <span class="n">doc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;genres&quot;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="p">})</span>
+
+    <span class="n">avg_scores</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">movie_scores</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="n">top_movie_ids</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">avg_scores</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="n">request</span><span class="o">.</span><span class="n">num_recs</span><span class="p">]</span>
+    <span class="n">top_movie_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">mid</span> <span class="k">for</span> <span class="n">mid</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_movie_ids</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">top_movie_ids</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+
+    <span class="c1"># Fetch metadata from BigQuery</span>
+    <span class="n">query_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    SELECT</span>
+<span class="s2">      tconst AS movie_id,</span>
+<span class="s2">      ANY_VALUE(movie_title) AS movie_title,</span>
+<span class="s2">      ANY_VALUE(movie_year) AS movie_year,</span>
+<span class="s2">      ANY_VALUE(age_rating) AS age_rating,</span>
+<span class="s2">      ANY_VALUE(duration) AS duration,</span>
+<span class="s2">      ANY_VALUE(imdb_rating) AS imdb_rating,</span>
+<span class="s2">      ANY_VALUE(top_5_actors) AS top_5_actors,</span>
+<span class="s2">      ANY_VALUE(poster_url) AS poster_url</span>
+<span class="s2">    FROM </span><span class="si">{</span><span class="n">BQ_TABLE</span><span class="si">}</span>
+<span class="s2">    WHERE tconst IN UNNEST(@movie_ids)</span>
+<span class="s2">    GROUP BY movie_id</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="n">job_config</span> <span class="o">=</span> <span class="n">bigquery</span><span class="o">.</span><span class="n">QueryJobConfig</span><span class="p">(</span>
+        <span class="n">query_parameters</span><span class="o">=</span><span class="p">[</span><span class="n">bigquery</span><span class="o">.</span><span class="n">ArrayQueryParameter</span><span class="p">(</span><span class="s2">&quot;movie_ids&quot;</span><span class="p">,</span> <span class="s2">&quot;STRING&quot;</span><span class="p">,</span> <span class="n">top_movie_ids</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">genre_df</span> <span class="o">=</span> <span class="n">bq</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query_str</span><span class="p">,</span> <span class="n">job_config</span><span class="o">=</span><span class="n">job_config</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+    <span class="n">title_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">genre_df</span><span class="p">[</span><span class="s2">&quot;movie_id&quot;</span><span class="p">],</span> <span class="n">genre_df</span><span class="p">[</span><span class="s2">&quot;movie_title&quot;</span><span class="p">]))</span>
+    <span class="n">meta_map</span> <span class="o">=</span> <span class="n">genre_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;movie_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Filter by genres</span>
+    <span class="n">filtered_movie_ids</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">use_genre_filter</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">selected_genres</span><span class="p">:</span>
+        <span class="n">selected_genres_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">selected_genres</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">movie_id</span> <span class="ow">in</span> <span class="n">top_movie_ids</span><span class="p">:</span>
+            <span class="n">all_genres</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">chunk_meta</span><span class="p">[</span><span class="n">movie_id</span><span class="p">]:</span>
+                <span class="n">all_genres</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;genres&quot;</span><span class="p">,</span> <span class="p">[]))</span>
+            <span class="n">all_genres_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">all_genres</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">filtering_mode</span> <span class="o">==</span> <span class="s2">&quot;relaxed&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">selected_genres_set</span> <span class="o">&amp;</span> <span class="n">all_genres_set</span><span class="p">:</span>
+                    <span class="n">filtered_movie_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">selected_genres_set</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">all_genres_set</span><span class="p">):</span>
+                    <span class="n">filtered_movie_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">filtered_movie_ids</span> <span class="o">=</span> <span class="n">top_movie_ids</span>
+
+    <span class="c1"># Fallback: return top results even if none match genres</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">use_genre_filter</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">filtered_movie_ids</span><span class="p">:</span>
+        <span class="n">filtered_movie_ids</span> <span class="o">=</span> <span class="n">top_movie_ids</span>
+
+    <span class="c1"># Prepare the final results</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">movie_id</span> <span class="ow">in</span> <span class="n">filtered_movie_ids</span><span class="p">:</span>
+        <span class="n">chunks</span> <span class="o">=</span> <span class="n">chunk_meta</span><span class="p">[</span><span class="n">movie_id</span><span class="p">]</span>
+        <span class="n">sorted_chunks</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">chunk_sort_key</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;chunk_id&quot;</span><span class="p">]))</span>
+        <span class="n">genres</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">g</span> <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">chunks</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">chunk</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;genres&quot;</span><span class="p">,</span> <span class="p">[])))</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="n">meta_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_id</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">top_actors</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;top_5_actors&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">top_actors</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">top_actors</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)])</span> <span class="k">if</span> <span class="n">top_actors</span> <span class="k">else</span> <span class="s2">&quot;Actors not found&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;movie_id&quot;</span><span class="p">:</span> <span class="n">movie_id</span><span class="p">,</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_id</span><span class="p">,</span> <span class="s2">&quot;Unknown Title&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;movie_year&quot;</span><span class="p">,</span> <span class="s2">&quot;Year not found&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;age_rating&quot;</span><span class="p">:</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;age_rating&quot;</span><span class="p">,</span> <span class="s2">&quot;Rating not found&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="s2">&quot;Duration not found&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;imdb_rating&quot;</span><span class="p">:</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;imdb_rating&quot;</span><span class="p">,</span> <span class="s2">&quot;IMDb rating not found&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;top_actors&quot;</span><span class="p">:</span> <span class="n">top_actors</span><span class="p">,</span>
+            <span class="s2">&quot;poster_url&quot;</span><span class="p">:</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;poster_url&quot;</span><span class="p">,</span> <span class="s2">&quot;Poster URL not found&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;genres&quot;</span><span class="p">:</span> <span class="n">genres</span><span class="p">,</span>
+            <span class="s2">&quot;preview_chunks&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">chunk</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">chunk</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">][:</span><span class="mi">300</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;...&quot;</span>
+                <span class="p">}</span>
+                <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">sorted_chunks</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="n">results</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="app.back.main.root" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">root</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Root endpoint to check if the API is running.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>dict</code></td>          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A message indicating the API is running.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>app/back/main.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">root</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Root endpoint to check if the API is running.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A message indicating the API is running.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;- API is running. Use /docs to test.&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

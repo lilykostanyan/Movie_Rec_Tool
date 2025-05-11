@@ -1,0 +1,944 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="pipeline/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#movie-recommendation-tool" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  PIPELINE
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="etl/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ETL
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="back/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  BACK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="front/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FRONT
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Goal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Key Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-technology-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Technology Stack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-access-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Access the Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-services-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Services (Docker Compose)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PIPELINE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="etl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ETL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="back/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BACK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="front/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FRONT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="movie-recommendation-tool">🎥 Movie Recommendation Tool</h1>
+<p><strong>Authors:</strong><br />
+Anna Hovakimyan<br />
+Lili Kostanyan  </p>
+<p><strong>Created:</strong> 09/05/2025</p>
+<p><strong>Capstone — BS in Data Science, American University of Armenia</strong></p>
+<hr />
+<h2 id="-overview">- Overview</h2>
+<p>This project presents a <strong>content-based</strong> movie recommendation system that leverages <strong>natural language processing</strong>, <strong>semantic search</strong>, and <strong>genre filtering</strong> to deliver relevant and engaging movie suggestions. Users interact through a web interface built with <strong>Streamlit</strong>, supported by a backend powered by <strong>FastAPI</strong>, <strong>Elasticsearch</strong>, and <strong>Google BigQuery</strong>.</p>
+<p>At its core, the system encodes user-provided plot descriptions using <strong>Sentence-BERT (SBERT)</strong> embeddings and performs a <strong>hybrid search</strong> — combining semantic similarity (cosine distance on vector embeddings) and lexical relevance (BM25 scoring) in a <strong>70:30</strong> ratio. The interface allows users to apply strict or relaxed genre filters, choose how many recommendations to receive, and even interact via a conversational <strong>Gemini AI</strong> assistant for more natural queries.</p>
+<p>Movie synopses are preprocessed, chunked, and embedded before being indexed in Elasticsearch for fast retrieval. Final recommendations are enriched with metadata (such as titles, ratings, posters, and actors) fetched from Google BigQuery to provide a visually rich and informative experience.</p>
+<p>The proposed system demonstrates how hybrid embedding-based retrieval, combined with genre filtering, can offer <strong>accurate</strong>, <strong>flexible</strong>, and <strong>user-friendly</strong> movie recommendations.</p>
+<hr />
+<h2 id="-goal">- Goal</h2>
+<p>To recommend movies based on:</p>
+<ul>
+<li>A user-provided description or preference</li>
+<li>Genre-based filtering (strict or relaxed)</li>
+<li>An optional conversational AI assistant powered by Gemini API</li>
+</ul>
+<hr />
+<h2 id="-key-features">- Key Features</h2>
+<ul>
+<li><strong>Hybrid Retrieval:</strong> Combines semantic similarity (SBERT embeddings) with BM25 ranking.</li>
+<li><strong>Interactive UI:</strong> Streamlit app lets users select genres, adjust filters, and input free-text queries.</li>
+<li><strong>Genre Filtering:</strong> Supports both strict (AND) and relaxed (OR) filtering across genres.</li>
+<li><strong>Two Modes of Recommendation:</strong></li>
+<li>Our Model (SBERT + BM25)</li>
+<li>Gemini AI (chatbot-style experience)</li>
+<li><strong>Visual Results:</strong> Includes movie posters, actors, ratings, and summaries.</li>
+<li><strong>Scalable Infrastructure:</strong> All components containerized using Docker.</li>
+</ul>
+<hr />
+<h2 id="-architecture">- Architecture</h2>
+<ul>
+<li><strong>ETL Service:</strong> Loads vectorized <code>.json</code> movie synopses into Elasticsearch.</li>
+<li><strong>Elasticsearch:</strong> Stores embeddings and handles similarity search.</li>
+<li><strong>Kibana:</strong> Offers visual inspection of indexed data.</li>
+<li><strong>Backend:</strong> FastAPI app that performs semantic search and data enrichment from BigQuery.</li>
+<li><strong>Frontend:</strong> Streamlit UI for user interaction and displaying recommendations.</li>
+</ul>
+<hr />
+<h2 id="-technology-stack">- Technology Stack</h2>
+<ul>
+<li>Python 3.10+  </li>
+<li>Playwright, BeautifulSoup, SBERT, and aiohttp (for scraping and preprocessing)</li>
+<li>Google BigQuery </li>
+<li>Sentence-BERT (SentenceTransformers)  </li>
+<li>Docker &amp; Docker Compose  </li>
+<li>Elasticsearch + Kibana </li>
+<li>FastAPI  </li>
+<li>Streamlit   </li>
+<li>Gemini AI (optional)</li>
+</ul>
+<hr />
+<h2 id="-project-structure">- Project Structure</h2>
+<pre><code class="language-plaintext">Movie_Rec_Tool/
+├── app/
+│   ├── etl/           # Data loader for Elasticsearch
+│   ├── back/          # FastAPI backend
+│   ├── front/         # Streamlit frontend
+│   ├── pipeline/      # Chunking, embedding, uploading logic
+│   ├── docker-compose.yml
+│   └── client_secrets/  # Google credentials
+└──
+</code></pre>
+<ul>
+<li>More detailed:</li>
+</ul>
+<pre><code class="language-plaintext">Movie_Rec_Tool/
+├── app/ 
+│ ├── etl/ 
+│ │ ├── .env (NOT committed)
+│ │ ├── .env.example (committed)
+│ │ ├── load.py
+│ │ ├── Dockerfile
+│ │ ├── requirements.txt
+│ │ └── ... # Other helper modules
+│ ├── back/ 
+│ │ ├── .env (NOT committed)
+│ │ ├── .env.example (committed)
+│ │ ├── main.py
+│ │ ├── Dockerfile
+│ │ ├── requirements.txt
+│ │ └── ... # Other backend modules
+│ ├── front/ 
+│ │ ├── .env (NOT committed)
+│ │ ├── .env.example (committed)
+│ │ ├── app.py 
+│ │ ├── Dockerfile
+│ │ ├── requirements.txt
+│ │ └── ... # UI logic and styling
+│ ├── pipeline/
+│ │ ├── .env (NOT committed)
+│ │ ├── .env.example (committed) 
+│ │ ├── main_pipeline.py 
+│ │ └── ... # All data processing and embedding scripts
+│ └── docker-compose.yml # Defines and runs multi-container Docker services
+│
+├── client_secrets/ # (NOT committed)
+│ └── your-service-account.json # service account JSON file
+│
+├── README.md
+└── ... # Additional helper files
+</code></pre>
+<hr />
+<h2 id="-installation">- Installation</h2>
+<p>Before getting started, ensure you have the following:</p>
+<ol>
+<li>Clone the repository:</li>
+</ol>
+<pre><code class="language-bash">git clone https://github.com/lilykostanyan/Movie_Rec_Tool.git
+</code></pre>
+<ol>
+<li>Open the project directory (Movie_Rec_Tool) and change directory:</li>
+</ol>
+<pre><code class="language-bash">cd app
+</code></pre>
+<ol>
+<li>To run this project end-to-end, you will need the following files, which will be shared via a <strong>Google Drive link</strong> (inside <code>env.txt</code> for all of them):</li>
+</ol>
+<p>a. <code>.env</code> files for each service (folder):  </p>
+<ul>
+<li><code>etl/.env</code>  </li>
+<li><code>back/.env</code>  </li>
+<li><code>front/.env</code></li>
+<li><code>pipeline/.env</code></li>
+</ul>
+<p>Place the <code>.env</code> files into their respective folders (<code>etl/</code>, <code>back/</code>, <code>front/</code>, <code>pipeline/</code>) </p>
+<ul>
+<li>Copy the example file:</li>
+</ul>
+<pre><code class="language-bash">cp .env.example .env
+</code></pre>
+<p>Open each <code>.env</code> file and fill in any missing values (lines with <code>VARIABLE_NAME=</code>)</p>
+<p>b. Google service credentials:<br />
+- <code>client_secrets/your-service-account.json</code><br />
+<em>(this folder must be created manually in the app folder)</em></p>
+<pre><code class="language-plaintext">app/
+├── client_secrets/
+│   └── your-service-account.json
+│   └── ...
+└──
+</code></pre>
+<ul>
+<li>
+<p>Open <code>back/.env</code>, <code>pipeline/.env</code> and update this line:
+SERVICE_ACCOUNT_FILE=client_secrets/your-service-account.json</p>
+</li>
+<li>
+<p>Open the provided with a ZIP file containing preprocessed <code>.json</code> files from <strong>Google Drive</strong>.</p>
+</li>
+<li>
+<p><strong>Place the <code>.zip</code> file</strong> inside the following folder:</p>
+</li>
+</ul>
+<blockquote>
+<p>Example folder structure after placement:</p>
+</blockquote>
+<pre><code class="language-plaintext">app/
+├── etl/
+│ └── data/
+│ │ └── jsons/
+│ │  ├── move_data.zip
+│ └── ...
+└──
+</code></pre>
+<ol>
+<li>Build and start the Docker containers:</li>
+</ol>
+<pre><code class="language-bash">docker-compose up --build
+</code></pre>
+<ol>
+<li>Open new terminal:</li>
+</ol>
+<pre><code class="language-bash">cd app/pipeline
+</code></pre>
+<ol>
+<li>From inside the project directory, install the required Python packages by running:</li>
+</ol>
+<pre><code class="language-bash">pip install -r requirements.txt
+</code></pre>
+<p>and then, install the necessary Playwright browser binaries:</p>
+<pre><code class="language-bash">playwright install
+</code></pre>
+<ol>
+<li>Run the pipeline (no need to wait until Docker is fully up)</li>
+</ol>
+<pre><code class="language-bash">python main_pipeline.py
+</code></pre>
+<hr />
+<h2 id="-access-the-application">- Access the Application</h2>
+<p>After running <code>docker-compose up --build</code>, you can access the different parts of the application using the following URLs:</p>
+<ul>
+<li><strong>Elasticsearch</strong>: <a href="http://localhost:9200">http://localhost:9200</a> </li>
+</ul>
+<p>Elasticsearch stores all the synopses and powers the search functionality. Visiting this URL confirms the server is running (There should be some JSON output).</p>
+<hr />
+<ul>
+<li><strong>Kibana Dashboard</strong>: <a href="http://localhost:5601">http://localhost:5601</a> </li>
+</ul>
+<p>Kibana provides a UI to visually inspect and manage your Elasticsearch index:
+1. Click on the <strong>menu icon (☰)</strong> in the top-left corner of the page.
+2. Scroll down and click on <strong>Dev Tools</strong>.
+3. In the console that appears, you can run queries like:</p>
+<ul>
+<li>counts documents in the index</li>
+</ul>
+<pre><code class="language-bash">GET movies-bm25-vector/_count
+</code></pre>
+<ul>
+<li>retrieves documents from the index</li>
+</ul>
+<pre><code class="language-bash">GET movies-bm25-vector/_search
+</code></pre>
+<hr />
+<ul>
+<li><strong>FastAPI Backend</strong>: <a href="http://localhost:8000">http://localhost:8000</a> </li>
+</ul>
+<p>The FastAPI backend handles the core recommendation logic and communication with Elasticsearch.
+Use the built-in <a href="http://localhost:8000/docs">Swagger UI</a> to explore and test API endpoints.</p>
+<hr />
+<p>Finally, open the <strong>Streamlit</strong> application.</p>
+<ul>
+<li><strong>Streamlit Frontend</strong>: <a href="http://localhost:8501">http://localhost:8501</a> </li>
+</ul>
+<p>This is the main user interface for the application.</p>
+<ul>
+<li>Choose between Gemini AI or Our Model</li>
+<li>Enter a custom movie description</li>
+<li>Optionally filter by genre</li>
+<li>See detailed movie suggestions with posters, ratings, actors, and synopsis previews</li>
+</ul>
+<hr />
+<h2 id="-services-docker-compose">- Services (Docker Compose)</h2>
+<pre><code class="language-yaml">services:
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.5.1
+    restart: always
+    ports:
+      - &quot;9200:9200&quot;
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;curl&quot;, &quot;-f&quot;, &quot;http://localhost:9200/_cluster/health&quot;]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  kibana:
+    container_name: kibana
+    restart: always
+    image: docker.elastic.co/kibana/kibana:8.5.1
+    ports:
+      - &quot;5601:5601&quot;
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+
+  etl:
+    container_name: etl
+    build:
+      context: ./etl
+      dockerfile: Dockerfile
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    restart: on-failure
+    env_file:
+      - ./etl/.env
+    volumes:
+      - ./etl/data:/etl/data
+      - ./shared_logs:/etl/logs
+    environment:
+      - PYTHONPATH=/app
+
+  back:
+    container_name: back
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    env_file:
+      - ./back/.env
+    ports:
+      - &quot;8000:8000&quot;
+    volumes:
+      - ./back:/back
+      - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./client_secrets/enduring-brace-451209-q3-35cf0810d57c.json:/back/client_secrets/enduring-brace-451209-q3-35cf0810d57c.json:ro
+      - ./shared_logs:/back/logs
+    environment:
+      - PYTHONPATH=/app
+
+  front:
+    container_name: front
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    env_file:
+      - ./front/.env
+    ports:
+      - &quot;8501:8501&quot;
+    volumes:
+      - ./front:/front
+      - ./shared_logs:/app/shared_logs
+    environment:
+      - PYTHONPATH=/app
+    depends_on:
+      - back
+
+volumes:
+  esdata:
+</code></pre>
+<hr />
+<blockquote>
+<p><strong>Note:</strong><br />
+Before accessing any URLs, make sure:</p>
+<ul>
+<li>Docker is running on your machine  </li>
+<li>You’ve created a <code>.env</code> file based on the provided <code>.env.example</code></li>
+<li>All required environment variables are <strong>filled in correctly</strong> —<br />
+  (if you see a line like <code>VARIABLE_NAME=</code> with nothing after the <code>=</code>, it means<br />
+<strong>you still need to enter a value manually</strong>)</li>
+<li>Your Google service account JSON file is placed inside a folder named <code>client_secrets/</code> (this folder must be created manually)  </li>
+<li>The variable <code>SERVICE_ACCOUNT_FILE</code> in your <code>.env</code> file points to the correct path (e.g., <code>client_secrets/your-service-account.json</code>)</li>
+</ul>
+</blockquote>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
