@@ -9,3 +9,13 @@ venv.bak/
 
 # Environment variable files
 .env
+
+# Ignore contents of a folder but keep the folder
+etl/data/jsons/*
+!etl/data/jsons/.gitkeep
+
+etl/data/to_insert/*
+!etl/data/to_insert/.gitkeep
+
+etl/data/archive/*
+!etl/data/archive/.gitkeep
