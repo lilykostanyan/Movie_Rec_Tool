@@ -328,6 +328,8 @@ Once the backend is running, test it via Swagger UI:
 
 You can try out the `POST /recommend_movies` endpoint interactively from there.
 
+![FastAPI](docs/api.png "FastAPI")
+
 ---
 
 > ! Make sure `.env` is correctly set in `/app/back/`, with variables like `GENRE_OPTIONS`, `BQ_TABLE`, `SERVICE_ACCOUNT_FILE`, etc., before launching the backend.
