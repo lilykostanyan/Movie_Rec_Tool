@@ -25,6 +25,7 @@ The proposed system demonstrates how hybrid embedding-based retrieval, combined 
 ## - Goal
 
 To recommend movies based on:
+
 - A user-provided description or preference
 - Genre-based filtering (strict or relaxed)
 - An optional conversational AI assistant powered by Gemini API
