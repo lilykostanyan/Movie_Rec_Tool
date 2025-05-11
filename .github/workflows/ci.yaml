@@ -25,7 +25,6 @@ jobs:
 
       - run: |
           pip install --upgrade pip
-          pip install mkdocs-material mkdocstrings mkdocstrings-python==1.7.3 griffe==0.37.2 pillow cairosvg
-          pip show mkdocstrings-python
+          pip install -r requirements.txt
 
       - run: mkdocs gh-deploy --force

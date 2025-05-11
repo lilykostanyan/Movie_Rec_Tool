@@ -1,2 +1,6 @@
 mkdocs-material
-mkdocstrings[python]
+mkdocstrings
+mkdocstrings-python==1.7.3
+griffe==0.37.0
+pillow
+cairosvg
