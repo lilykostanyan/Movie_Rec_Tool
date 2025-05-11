@@ -21,7 +21,7 @@ In `load.py`, we use the `elasticsearch` Python client to:
 
 ---
 
-## 🐳 Docker Setup
+## - Docker Setup
 
 The ETL service is containerized and configured to run a `run_etl.sh` script which:
 

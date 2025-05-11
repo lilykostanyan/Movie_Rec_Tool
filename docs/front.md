@@ -31,7 +31,7 @@ Users can:
 
 ---
 
-## 🐳 Docker Service
+## - Docker Service
 
 The frontend is deployed as a container and connects with backend (FastAPI) to request movie recommendations and displays results:
 

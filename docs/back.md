@@ -33,7 +33,7 @@ The **FastAPI backend** service is responsible for handling user requests, runni
 
 ---
 
-## 🐳 Docker Service
+## - Docker Service
 
 The backend is deployed as a container and connects with Elasticsearch and BigQuery:
 
