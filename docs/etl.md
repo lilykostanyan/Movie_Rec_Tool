@@ -68,5 +68,4 @@ RUN chmod +x run_etl.sh
 CMD ["sh", "run_etl.sh"]
 ```
 
-::: app.etl.run_etl
 ::: app.etl.load
