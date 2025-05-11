@@ -563,6 +563,8 @@ services:
 volumes:
   esdata:
 ```
+---
+
 ![Pipeline](docs/pipeline.png "Pipeline")
 
 ---
