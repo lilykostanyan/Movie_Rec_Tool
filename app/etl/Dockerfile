@@ -20,6 +20,5 @@ COPY . .
 # Make the run script executable
 RUN chmod +x run_etl.sh
 
-
 # Run the ETL process
 CMD ["sh", "run_etl.sh"]
