@@ -22,17 +22,23 @@ theme:
   language: en
   palette:
     - scheme: default
+      primary: custom
+      accent: custom
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-      primary: '#F5C518'
-      accent: '#F5C518'
+      colors:
+        primary: '#f5c518'
+        accent: '#f5c518'
     - scheme: slate
+      primary: custom
+      accent: custom
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-      primary: '#f5c518'
-      accent: '#F5C518'
+      colors:
+        primary: '#f5c518'
+        accent: '#f5c518'
 
 plugins:
   - mkdocstrings:
