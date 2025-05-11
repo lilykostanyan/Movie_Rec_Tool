@@ -459,6 +459,7 @@ The following services are defined in `docker-compose.yaml`:
 - Handles recommendation logic and serves data to the frontend
 - Connects to both Elasticsearch and Google BigQuery
 - Mounts GCP credentials via `client_secrets/`
+- Uses `shared_logs/` for centralized logging
 
 ---
 
