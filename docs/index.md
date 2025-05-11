@@ -83,7 +83,7 @@ Movie_Rec_Tool/
 ```
 
 - More detailed:
-
+```plaintext
 Movie_Rec_Tool/
 ├── app/ 
 │ ├── etl/ 
