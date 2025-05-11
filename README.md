@@ -391,6 +391,8 @@ CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.headless=true
   - 🖼 Poster image
   - 📖 Short preview text from the synopsis
 
+![Streamlit](docs/streamlit.png "Streamlit")
+
 ---
 
 #### How It Works:
