@@ -56,10 +56,12 @@ Before getting started, ensure you have the following:
       - `client_secrets/your-service-account.json`  
       *(this folder must be created manually in the app folder)*
 
-      ```plaintext
+    ```plaintext
     app/
     ├── client_secrets/
     │   └── your-service-account.json
+    │   └── ...
+    └──
     ```
 
       - Open `back/.env`, `pipeline/.env` and update this line:
@@ -77,6 +79,7 @@ Before getting started, ensure you have the following:
   │ │ └── jsons/
   │ │  ├── move_data.zip
   │ └── ...
+  └──
   ```
 
 5. Build and start the Docker containers:
@@ -172,7 +175,7 @@ Finally, open the **Streamlit** application.
 
 ### Project Schema
 ```plaintext
-Final-Capstone/
+Movie_Rec_Tool/
 ├── app/ 
 │ ├── etl/ 
 │ │ ├── .env (NOT committed)
