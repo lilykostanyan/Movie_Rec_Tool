@@ -9,7 +9,7 @@ Lili Kostanyan
 
 ---
 
-## 🧠 Overview
+## - Overview
 
 This project presents a content-based movie recommendation system that leverages natural language processing, semantic search, and genre filtering to deliver relevant and engaging movie suggestions. Users interact through a web interface built with Streamlit, supported by a backend powered by FastAPI, Elasticsearch, and Google BigQuery.
 
@@ -21,7 +21,7 @@ The proposed system demonstrates how hybrid embedding-based retrieval, combined 
 
 ---
 
-## 🎯 Goal
+## - Goal
 
 To recommend movies based on:
 - A user-provided description or preference
@@ -30,7 +30,7 @@ To recommend movies based on:
 
 ---
 
-## 🧩 Key Features
+## - Key Features
 
 - **Hybrid Retrieval:** Combines semantic similarity (SBERT embeddings) with BM25 ranking.
 - **Interactive UI:** Streamlit app lets users select genres, adjust filters, and input free-text queries.
@@ -43,7 +43,7 @@ To recommend movies based on:
 
 ---
 
-## 🔧 Architecture
+## - Architecture
 
 - **ETL Service:** Loads vectorized `.json` movie synopses into Elasticsearch.
 - **Elasticsearch:** Stores embeddings and handles similarity search.
@@ -53,7 +53,7 @@ To recommend movies based on:
 
 ---
 
-## 🧪 Technology Stack
+## - Technology Stack
 
 - Python 3.10+  
 - Playwright, BeautifulSoup, SBERT, and aiohttp (for scraping and preprocessing)
@@ -67,7 +67,7 @@ To recommend movies based on:
 
 ---
 
-## 🗂 Project Structure
+## - Project Structure
 
 ```plaintext
 Movie_Rec_Tool/
