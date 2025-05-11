@@ -67,5 +67,5 @@ RUN chmod +x run_etl.sh
 # Run the ETL process
 CMD ["sh", "run_etl.sh"]
 ```
-::: app.etl.config
 ::: app.etl.load
+::: app.etl.config
