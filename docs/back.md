@@ -8,7 +8,7 @@ The **FastAPI backend** service is responsible for handling user requests, runni
 
 - **FastAPI**: [http://localhost:8501](http://localhost:8501)
 
-- **Swagger**: [Swagger UI](http://localhost:8000/docs)
+- **Swagger UI**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 

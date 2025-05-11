@@ -1,6 +1,6 @@
 # - Web Application (Frontend)
 
-The frontend is a **Streamlit web application** that allows users to interactively receive movie recommendations based on a custom model or Google's **Gemini AI**.
+The frontend is a **Streamlit web application** that allows users to interactively receive movie recommendations based on **Our Model** or Google's **Gemini AI**.
 
 ---
 
@@ -9,6 +9,7 @@ The frontend is a **Streamlit web application** that allows users to interactive
 - **Main Interface**: [http://localhost:8501](http://localhost:8501)
 
 Users can:
+
 - Enter a movie description
 - Select recommendation mode
 - Filter by genres
