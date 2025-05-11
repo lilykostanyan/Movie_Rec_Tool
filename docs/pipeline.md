@@ -35,11 +35,11 @@ The pipeline automates the full process of **collecting**, **processing**, and *
 
 ---
 
-# - Main Pipeline
+## - Main Pipeline
 
 ::: app.pipeline.main_pipeline
 
-# - Submodules
+## - Submodules
 
 ::: app.pipeline.scrape_tt_codes
 ::: app.pipeline.extract_movie_data
