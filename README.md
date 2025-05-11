@@ -557,4 +557,6 @@ volumes:
   esdata:
 ```
 
+![Application Flow](docs/flow.png "Application Flow")
+
 ---
