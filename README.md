@@ -563,6 +563,9 @@ services:
 volumes:
   esdata:
 ```
+![Pipeline](docs/pipeline.png "Pipeline")
+
+---
 
 ![Application Flow](docs/flow.png "Application Flow")
 
