@@ -124,11 +124,11 @@ After running `docker-compose up --build`, you can access the different parts of
    3. In the console that appears, you can run queries like:
 
    - counts documents in the index
-   ```json
+   ```bash
    GET movies-bm25-vector/_count
    ```
    - retrieves documents from the index
-   ```json
+   ```bash
    GET movies-bm25-vector/_search
    ```
 
