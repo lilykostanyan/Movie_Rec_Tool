@@ -475,10 +475,10 @@ The following services are defined in `docker-compose.yaml`:
 
 ---
 
- ```yaml
+```yaml
 services:
   elasticsearch:
-    container_name: elasticsearch5
+    container_name: elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:8.5.1
     restart: always
     ports:
@@ -496,7 +496,7 @@ services:
       - esdata:/usr/share/elasticsearch/data
 
   kibana:
-    container_name: kibana5
+    container_name: kibana
     restart: always
     image: docker.elastic.co/kibana/kibana:8.5.1
     ports:
@@ -508,7 +508,7 @@ services:
       - ELASTICSEARCH_URL=http://elasticsearch:9200
 
   etl:
-    container_name: etl5
+    container_name: etl
     build:
       context: ./etl
       dockerfile: Dockerfile
@@ -525,7 +525,7 @@ services:
       - PYTHONPATH=/app
 
   back:
-    container_name: back5
+    container_name: back
     build:
       context: ./back
       dockerfile: Dockerfile
@@ -545,7 +545,7 @@ services:
       - PYTHONPATH=/app
 
   front:
-    container_name: front5
+    container_name: front
     build:
       context: ./front
       dockerfile: Dockerfile

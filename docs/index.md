@@ -260,6 +260,100 @@ This is the main user interface for the application.
 
 --- 
 
+## - Services (Docker Compose)
+
+```yaml
+services:
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.5.1
+    restart: always
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200/_cluster/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  kibana:
+    container_name: kibana
+    restart: always
+    image: docker.elastic.co/kibana/kibana:8.5.1
+    ports:
+      - "5601:5601"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+
+  etl:
+    container_name: etl
+    build:
+      context: ./etl
+      dockerfile: Dockerfile
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    restart: on-failure
+    env_file:
+      - ./etl/.env
+    volumes:
+      - ./etl/data:/etl/data
+      - ./shared_logs:/etl/logs
+    environment:
+      - PYTHONPATH=/app
+
+  back:
+    container_name: back
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    env_file:
+      - ./back/.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./back:/back
+      - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./client_secrets/enduring-brace-451209-q3-35cf0810d57c.json:/back/client_secrets/enduring-brace-451209-q3-35cf0810d57c.json:ro
+      - ./shared_logs:/back/logs
+    environment:
+      - PYTHONPATH=/app
+
+  front:
+    container_name: front
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    env_file:
+      - ./front/.env
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./front:/front
+      - ./shared_logs:/app/shared_logs
+    environment:
+      - PYTHONPATH=/app
+    depends_on:
+      - back
+
+volumes:
+  esdata:
+```
+
+--- 
+
 > **Note:**  
 > Before accessing any URLs, make sure:
 >

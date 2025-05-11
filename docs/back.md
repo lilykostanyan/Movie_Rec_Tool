@@ -4,6 +4,14 @@ The **FastAPI backend** service is responsible for handling user requests, runni
 
 ---
 
+## - Access URLs
+
+- **FastAPI**: [http://localhost:8501](http://localhost:8501)
+
+- **Swagger**: [Swagger UI](http://localhost:8000/docs)
+
+---
+
 ## - Features
 
 - **/recommend_movies** (POST):  
@@ -22,17 +30,6 @@ The **FastAPI backend** service is responsible for handling user requests, runni
 4. **Genre Filtering**: Filters results by genre using strict or relaxed mode.
 5. **Metadata Enrichment**: Fetches detailed metadata (title, poster, rating, actors) from BigQuery.
 6. **Response**: Returns a structured list of top movie matches.
-
----
-
-## - Dependencies
-
-All environment-driven configurations are stored in `.env` and accessed through the `config.py` module.
-
-- **Elasticsearch** setup and credentials
-- **BigQuery** service account and table info
-- **SBERT model** for semantic search
-- **Genre options** and filtering mode
 
 ---
 
